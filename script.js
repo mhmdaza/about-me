@@ -1,13 +1,24 @@
-const downArrow = document.querySelector(".down-arrow");
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
 
-// Add smooth scroll behavior when clicking down arrow
-downArrow.addEventListener("click", () => {
-  const aboutRight = document.getElementById("about-right");
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
 
-  // Check if element exists before scrolling
-  if (aboutRight) {
-    aboutRight.scrollIntoView({
-      behavior: "smooth", // Enable smooth scrolling
-    });
-  }
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
 });
