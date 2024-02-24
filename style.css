@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -113,7 +117,7 @@ body {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 35px; /* Adjust as needed */
+    font-size: 40px; /* Adjust as needed */
     color: #fff;
     text-decoration: none;
     animation: fade 1s ease-in-out infinite; /* Add fade animation */
